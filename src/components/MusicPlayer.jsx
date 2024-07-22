@@ -4,11 +4,17 @@ import { useMusicPlayer } from './useMusicPlayer';
 import { PlayOrPauseButton } from './PlayOrPauseButton';
 import { MusicPlayTimer } from './MusicPlayTimer';
 
-function MusicPlayer({ props: { musicNumber } }) {
+/**
+ * @param {object} props - props
+ * @param {number} props.musicNumber - 재생할 음악의 인덱스 번호
+ * @returns {Element} - JSX
+ */
+function MusicPlayer({ musicNumber }) {
+  console.log(musicNumber);
   const { togglePlaying, playing, audio, audioProps } = useMusicPlayer({
-    audioSrc: musics[musicNumber].src,
+    initalSrc: musics[musicNumber].src,
   });
-
+  console.log(musicNumber[123]);
   return (
     <div className="card">
       <div className="img">
@@ -32,7 +38,7 @@ function MusicPlayer({ props: { musicNumber } }) {
         </i>
         <i className="material-symbols-outlined">repeat</i>
       </div>
-      <audio {...audioProps} src={musics[musicNumber].src} display="hidden"></audio>
+      <audio {...audioProps} display="hidden"></audio>
     </div>
   );
 }

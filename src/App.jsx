@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="conatiner">
       <main>
-        <MusicPlayer props={{ musicNumber, setMusicNumber }} />
+        <MusicPlayer musicNumber={musicNumber} setMusicNumber={setMusicNumber} />
       </main>
     </div>
   );
